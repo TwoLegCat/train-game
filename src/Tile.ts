@@ -1,4 +1,4 @@
-class Tile {
+export default class Tile {
     x : number;
     y : number;
     district: string | null;
