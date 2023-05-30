@@ -1,13 +1,16 @@
 <mxfile host="65bd71144e">
     <diagram id="2PqA44viwHhDoglMb9Uw" name="Page-1">
-        <mxGraphModel dx="852" dy="451" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" background="none" math="0" shadow="0">
+        <mxGraphModel dx="376" dy="537" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" background="none" math="0" shadow="0">
             <root>
                 <object label="" test="fasd" id="0">
                     <mxCell/>
                 </object>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="2" value="&lt;h1&gt;#Map&lt;/h1&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=center;arcSize=12;" parent="1" vertex="1">
-                    <mxGeometry x="365" y="40" width="120" height="80" as="geometry"/>
+                <mxCell id="2" value="&lt;h1&gt;Map Algorithmus&lt;/h1&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;arcSize=12;" parent="1" vertex="1">
+                    <mxGeometry x="355" y="40" width="205" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="397.5" y="150" width="120" height="60" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
