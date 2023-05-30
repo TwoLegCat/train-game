@@ -1,10 +1,12 @@
 import React from 'react';
 import './Map.css';
-import Map from './createMap.ts' 
+import mapConstruct from './createMap' 
+const map: mapConstruct = new mapConstruct(10000, 26);
 
 function Map() {
-    let map = new Map();
     return(
-        <canvas></canvas>
+        <canvas id="map"></canvas>
     );
 }
+
+export default Map;

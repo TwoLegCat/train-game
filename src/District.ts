@@ -1,10 +1,10 @@
+import Tile from "./Tile"
 export default class District {
     name: string;
-    startTile: Array<number>;
-    tileAmount: number;
-    constructor(name: string, startTile: Array<number>, tileAmount: number) {
+    startTile: Tile;
+    tileAmount : number = 0;
+    constructor(name: string, startTile: Tile) {
         this.name = name;
         this.startTile = startTile;
-        this.tileAmount = tileAmount;
     }
 }
