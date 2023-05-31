@@ -11,7 +11,7 @@ export default class Map {
         this.width = Math.ceil(Math.sqrt(totalDesiredTiles * 16/9));
         this.height = Math.ceil(Math.sqrt(totalDesiredTiles * 9/16));
         let totalTiles = this.width * this.height;
-        let distanceBetweenStartTiles = Math.sqrt(totalTiles / districtCount)
+        let distanceBetweenStartTiles = Math.sqrt(totalTiles / districtCount) //still unclear
         //initialize Map array
         this.content = Array(this.width).fill(Array(this.height).fill(null));
         
@@ -27,7 +27,7 @@ export default class Map {
                 districtNames.push(generatedName);
                 let rndpos = [~~(Math.random() * this.width), ~~(Math.random() * this.height)];
                 for (let i = 0; i < startTilePositions.length; i++) {
-                    if (Math.sqrt((rndpos[0]-startTilePositions[i][0])**2 + (rndpos[1]-startTilePositions[i][1])**2) > distanceBetweenStartTiles) {
+                    if (Math.sqrt((rndpos[0] - startTilePositions[i][0])**2 + (rndpos[1] - startTilePositions[i][1])**2) > distanceBetweenStartTiles) {
                         startTilePositions.push(rndpos);
                         this.content[rndpos[0]][rndpos[1]] = new Tile(rndpos, generatedName);
                     } else {
