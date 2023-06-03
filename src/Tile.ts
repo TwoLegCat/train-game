@@ -1,12 +1,12 @@
 export default class Tile {
     pos: Array<number>;
-    district: string | null;
+    district: string;
     content : object = {};
     constructor(pos: Array<number>, district : string) {
         this.pos = pos;
         this.district = district;
     }
-    setTiles(map : Array<Array<Tile>>) {
+    /*setTiles(map : Array<Array<Tile>>) {
         const adjacentTiles = [
             [this.pos[0], this.pos[1] + 1],
             [this.pos[0], this.pos[1] - 1],
@@ -15,9 +15,9 @@ export default class Tile {
           ];
           
           for (const [x, y] of adjacentTiles) {
-            if (map[x]?.[y]?.district === null) {
+            if (typeof map[x][y] === null) {
               map[x][y].district = this.district;
             }
           }
-    }
+    }*/
 }
