@@ -2,9 +2,11 @@ export default class Tile {
     pos: Array<number>;
     district: string;
     content : object = {};
-    constructor(pos: Array<number>, district : string) {
+    color: string;
+    constructor(pos: Array<number>, district : string, color : string) {
         this.pos = pos;
         this.district = district;
+        this.color = color;
     }
     /*setTiles(map : Array<Array<Tile>>) {
         const adjacentTiles = [
