@@ -30,7 +30,6 @@ export default class Map {
                 for (let i = 0; i < startTilePositions.length; i++) {
                     if (Math.sqrt((rndpos[0] - startTilePositions[i][0])**2 + (rndpos[1] - startTilePositions[i][1])**2) > distanceBetweenStartTiles) {
                         console.log("random position passed random startTile")
-                      
                     } else {
                         failed = true;
                         districtNames.length -= 1;

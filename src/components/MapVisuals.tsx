@@ -16,7 +16,7 @@ const colors : Array<Array<string>> = [
         "#161931", /*"#1a3650",*/ "#112435", /*"#233547",*/ "#17232f"
     ]
 ];
-const map : Map = new Map(11000, 8, colors[0]);
+const map : Map = new Map(1000, 3, colors[0]);
 function MapVisuals() {
     const [tileSize, setTileSize] = useState(16);
     
@@ -28,9 +28,8 @@ function MapVisuals() {
         const ctx = canvas.getContext("2d"); if(!ctx) return;
         for (let x = 0; x < map.width; x++) {
             for (let y = 0; y < map.height; y++) {
-                ctx.fillRect(x * tileSize, y * tileSize, tileSize, tileSize);
                 ctx.fillStyle = map.content[x][y].color;
-                
+                ctx.fillRect(x * tileSize, y * tileSize, tileSize, tileSize);
             }
         }
         console.log("H")
