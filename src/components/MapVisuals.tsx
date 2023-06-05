@@ -17,7 +17,7 @@ const colors : Array<Array<string>> = [
     ]
 ];
 const map : Map = new Map(1000, 3, colors[0]);
-function MapVisuals() {
+export default function MapVisuals() {
     const [tileSize, setTileSize] = useState(16);
     
     
@@ -37,6 +37,4 @@ function MapVisuals() {
     return(
         <canvas id="map" {...size} ref={canvRef} style={{border: "1px solid black"}}></canvas>
     );
-}  
-
-export default MapVisuals;
+} 

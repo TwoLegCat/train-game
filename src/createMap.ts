@@ -10,7 +10,7 @@ export default class Map {
         //define width and height
         this.width = Math.ceil(Math.sqrt(totalDesiredTiles * 16/9));
         this.height = Math.ceil(Math.sqrt(totalDesiredTiles * 9/16));
-        this.colors = colors
+        this.colors = colors;
         let totalTiles = this.width * this.height;
         let distanceBetweenStartTiles = Math.sqrt(totalTiles / districtCount) //TODO: still unclear, maybe too less space
         //define names for districts
@@ -21,12 +21,12 @@ export default class Map {
         startTilePositions[0] = [~~(Math.random() * this.width), ~~(Math.random() * this.height)];
         districtNames[0] = `${chars[~~(Math.random() * chars.length)] + chars[~~(Math.random() * chars.length)]}`;
         let failed = false;
+        //* find random positions with given distance until desired districtCount is reached -> can result in endless loops
         while (startTilePositions.length < districtCount) {
             let generatedName : string = `${chars[~~(Math.random() * chars.length)] + chars[~~(Math.random() * chars.length)]}`;
             if (!(districtNames.includes(generatedName))) {
                 districtNames.push(generatedName);
                 let rndpos = [~~(Math.random() * this.width), ~~(Math.random() * this.height)];
-                
                 for (let i = 0; i < startTilePositions.length; i++) {
                     if (Math.sqrt((rndpos[0] - startTilePositions[i][0])**2 + (rndpos[1] - startTilePositions[i][1])**2) > distanceBetweenStartTiles) {
                         console.log("random position passed random startTile")
