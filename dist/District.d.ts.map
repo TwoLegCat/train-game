@@ -1,0 +1,1 @@
+{"version":3,"file":"District.d.ts","sourceRoot":"","sources":["../src/District.ts"],"names":[],"mappings":"AAAA,MAAM,CAAC,OAAO,OAAO,QAAQ;IACzB,IAAI,EAAE,MAAM,CAAC;IACb,QAAQ,EAAE,MAAM,EAAE,CAAC;IACnB,UAAU,EAAG,MAAM,CAAK;gBACZ,IAAI,EAAE,MAAM,EAAE,QAAQ,EAAE,MAAM,EAAE;CAI/C"}

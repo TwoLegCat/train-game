@@ -1,31 +1,30 @@
 import Tile from './Tile.js';
 import District from './District.js';
-
 import { createNoise2D } from 'simplex-noise';
 const noise = createNoise2D();
 console.log(noise(10, 10));
 console.log(noise(11, 10));
 export default class Map {
-    width: number;
-    height : number;
-    content : Array<Array<Tile>>;
-    districts : Array<District> = [];
-    constructor(totalDesiredTiles: number, districtCount: number, ratio?: number) {
+    width;
+    height;
+    content;
+    districts = [];
+    constructor(totalDesiredTiles, districtCount, ratio) {
         //*define width and height
-        this.width = Math.ceil(Math.sqrt(totalDesiredTiles * 16/9));
-        this.height = Math.ceil(Math.sqrt(totalDesiredTiles * 9/16));
+        this.width = Math.ceil(Math.sqrt(totalDesiredTiles * 16 / 9));
+        this.height = Math.ceil(Math.sqrt(totalDesiredTiles * 9 / 16));
         //let totalTiles = this.width * this.height;
         //let distanceBetweenStartTiles = Math.sqrt(totalTiles / districtCount) //TODO: still unclear, maybe too less space
         //*define names for districts
-        let districtNames: Array<string> = [];
-        let startTilePositions: Array<Array<number>> = [];
+        let districtNames = [];
+        let startTilePositions = [];
         //*create district names + first start pos of first district
         let chars = "abcdeghkmnopqrsuvwxyz";
         startTilePositions[0] = [~~(Math.random() * this.width), ~~(Math.random() * this.height)];
         districtNames[0] = `${chars[~~(Math.random() * chars.length)] + chars[~~(Math.random() * chars.length)]}`;
         while (startTilePositions.length < districtCount) {
             //let failed = false;
-            let generatedName : string = `${chars[~~(Math.random() * chars.length)] + chars[~~(Math.random() * chars.length)]}`;
+            let generatedName = `${chars[~~(Math.random() * chars.length)] + chars[~~(Math.random() * chars.length)]}`;
             if (!(districtNames.includes(generatedName))) {
                 districtNames.push(generatedName);
                 let rndpos = [~~(Math.random() * this.width), ~~(Math.random() * this.height)];
@@ -50,9 +49,9 @@ export default class Map {
         for (let x = 0; x < this.width; x++) {
             this.content[x] = [];
             for (let y = 0; y < this.height; y++) {
-                let bestDistricts : Array<{districtName : string, distance : number}> = [];
+                let bestDistricts = [];
                 for (let i = 0; i < this.districts.length; i++) {
-                    bestDistricts[i] = {districtName: this.districts[i].name, distance: Math.sqrt((x - this.districts[i].startPos[0]) ** 2 + (y - this.districts[i].startPos[1]) ** 2)}
+                    bestDistricts[i] = { districtName: this.districts[i].name, distance: Math.sqrt((x - this.districts[i].startPos[0]) ** 2 + (y - this.districts[i].startPos[1]) ** 2) };
                 }
                 bestDistricts.sort((a, b) => a.distance - b.distance);
                 this.content[x][y] = (new Tile([x, y], bestDistricts[0].districtName));
@@ -60,3 +59,4 @@ export default class Map {
         }
     }
 }
+//# sourceMappingURL=createMap.js.map
